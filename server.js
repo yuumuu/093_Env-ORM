@@ -25,15 +25,6 @@ app.get("/", (req, res) => {
   res.send("Welcome to the API");
 });
 
-app.get("/komik", async (req, res) => {
-    try {
-        const komik = await db.Komik.findAll();
-        res.send(komik);
-    } catch (err) {
-        res.status(500).send({ error: err.message });
-    }
-});
-
 app.post("/komik", async (req, res) => {
     const data = req.body;
 
@@ -44,6 +35,15 @@ app.post("/komik", async (req, res) => {
         res.status(500).send({ error: err.message });
     }
 })
+
+app.get("/komik", async (req, res) => {
+    try {
+        const komik = await db.Komik.findAll();
+        res.send(komik);
+    } catch (err) {
+        res.status(500).send({ error: err.message });
+    }
+});
 
 app.put("/komik/:id", async (req, res) => {
     const id = req.params.id;

@@ -1,0 +1,23 @@
+info:
+  name: POST Komik
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:3030/komik
+  body:
+    type: json
+    data: |-
+      {
+        "title": "Return of The Flowery Mount Hua Sect",
+        "description": "Manhwa gacor, bagus bet, rating 100/10",
+        "author": "lupa"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

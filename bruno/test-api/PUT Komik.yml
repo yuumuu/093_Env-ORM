@@ -1,0 +1,23 @@
+info:
+  name: PUT Komik
+  type: http
+  seq: 1
+
+http:
+  method: PUT
+  url: http://localhost:3030/komik/1
+  body:
+    type: json
+    data: |-
+      {
+        "title": "The Greatest Estate Developer",
+        "description": "Absolute Peak Manhwa ngebangun kota cik, PEAK LLYOD",
+        "author": "lupa"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

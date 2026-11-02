@@ -19,3 +19,7 @@ db.sequelize.sync()
     .catch((err) => {
         console.error(`Error starting server: ${err}`);
     })
+
+app.get("/", (req, res) => {
+  res.send("Welcome to the API");
+});

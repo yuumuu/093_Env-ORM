@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
   res.send("Welcome to the API");
 });
 
-app.get('/komik', async (req, res) => {
+app.get("/komik", async (req, res) => {
     try {
         const komik = await db.Komik.findAll();
         res.send(komik);
@@ -45,12 +45,13 @@ app.post("/komik", async (req, res) => {
     }
 })
 
-app.put('/komik/:id', async (req, res) => {
+app.put("/komik/:id", async (req, res) => {
     const id = req.params.id;
     const data = req.body;
 
     try {
         const komik = await db.Komik.findByPk(id);
+
         if (!komik) {
             return res.status(404).send({ message: 'Komik tidak ditemukan'});
         }
@@ -62,11 +63,12 @@ app.put('/komik/:id', async (req, res) => {
     }
 })
 
-app.delete('/komik/:id', async (req, res) => {
+app.delete("/komik/:id", async (req, res) => {
     const id = req.params.id;
 
     try {
         const komik = await db.Komik.findByPk(id);
+
         if (!komik) {
             return res.status(404).send({ message: 'Komik tidak ditemukan'});
         }

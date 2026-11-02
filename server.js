@@ -1,4 +1,6 @@
-import express from 'express';
-import pg from 'pg';
-import dotenv from 'dotenv';
-import sequelize from 'sequelize';
+const express = require("express");
+const app = express();
+const port = 3030;
+const db = require("./models");
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
